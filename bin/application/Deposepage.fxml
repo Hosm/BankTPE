@@ -1,0 +1,357 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.web.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.canvas.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.shape.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="480.0" prefWidth="600.0" style="-fx-background-color: TRANSPARENT;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controllers.DeposerController">
+   <children>
+      <AnchorPane fx:id="frame" onMouseDragged="#moveDragged" onMousePressed="#movePressed" opacity="0.8" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: black;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Button fx:id="closeButton" layoutX="562.0" layoutY="8.0" mnemonicParsing="false" onAction="#closeAction" text="X" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="8.0" />
+            <Button fx:id="minimizeButton" layoutX="494.0" layoutY="8.0" mnemonicParsing="false" onAction="#minimizeAction" prefHeight="25.0" prefWidth="26.0" text="-" AnchorPane.rightAnchor="80.0" AnchorPane.topAnchor="8.0" />
+            <Button fx:id="maximizeButton" layoutX="528.0" layoutY="8.0" mnemonicParsing="false" onAction="#maximizeAction" text="O" AnchorPane.rightAnchor="46.0" AnchorPane.topAnchor="8.0" />
+            <Circle fx:id="signe1" fill="#ff1f1f" layoutX="28.0" layoutY="21.0" radius="8.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="3.0" />
+            <Circle fx:id="signe2" fill="#ff1f1f" layoutX="51.0" layoutY="21.0" radius="8.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="3.0" />
+            <Circle fx:id="signe3" fill="#ff1f1f" layoutX="74.0" layoutY="21.0" radius="8.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="3.0" />
+         </children>
+      </AnchorPane>
+      <AnchorPane opacity="0.86" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: black; -fx-background-radius: 0;" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="40.0">
+         <children>
+            <VBox prefHeight="360.0" prefWidth="600.0" spacing="20.0" style="-fx-background-radius: 15;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <HBox alignment="CENTER" spacing="20.0">
+                     <children>
+                        <ImageView fitHeight="109.0" fitWidth="123.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../images/logo.png" />
+                           </image>
+                        </ImageView>
+                        <Label text="Choisissez votre operation" textFill="#fc9a9a">
+                           <font>
+                              <Font name="Century Gothic" size="20.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" spacing="10.0">
+                     <children>
+                        <Label text="Mr :" textFill="#d3c8c8">
+                           <font>
+                              <Font name="Century Gothic Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="LabelName" layoutX="15.0" layoutY="15.0" text=" Houssam Bourr" textFill="#d3c8c8">
+                           <font>
+                              <Font name="Century Gothic Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <Region prefHeight="22.0" prefWidth="62.0" />
+                        <Label layoutX="37.0" layoutY="15.0" text="Numero de compte :" textFill="#d3c8c8">
+                           <font>
+                              <Font name="Century Gothic Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="labelNumCompte" layoutX="59.0" layoutY="15.0" prefHeight="15.0" prefWidth="38.0" text="7465" textFill="#d3c8c8">
+                           <font>
+                              <Font name="Century Gothic Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <Region HBox.hgrow="ALWAYS" />
+                        <Button fx:id="HistoButton" mnemonicParsing="false" onAction="#goToHistorique" style="-fx-background-color: #28BABD;" text="Historique des transactions">
+                           <effect>
+                              <DropShadow color="#c74697" />
+                           </effect>
+                           <font>
+                              <Font name="Delicious-Bold" size="12.0" />
+                           </font>
+                        </Button>
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                     </VBox.margin>
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding>
+                  </HBox>
+                  <HBox alignment="TOP_CENTER" spacing="10.0">
+                     <children>
+                        <VBox spacing="5.0">
+                           <children>
+                              <HBox spacing="10.0">
+                                 <children>
+                                    <Button fx:id="button7" mnemonicParsing="false" onAction="#B7" text="7" textFill="#972525">
+                                       <effect>
+                                          <Lighting specularConstant="0.79" specularExponent="19.06">
+                                             <bumpInput>
+                                                <Shadow />
+                                             </bumpInput>
+                                             <light>
+                                                <Light.Distant color="#beeaff" />
+                                             </light>
+                                          </Lighting>
+                                       </effect>
+                                       <font>
+                                          <Font name="Anime Inept" size="17.0" />
+                                       </font>
+                                    </Button>
+                                    <Button fx:id="button8" layoutX="174.0" layoutY="10.0" mnemonicParsing="false" onAction="#B8" prefHeight="39.0" prefWidth="36.0" text="8" textFill="#972525">
+                                       <effect>
+                                          <Lighting specularConstant="0.79" specularExponent="19.06">
+                                             <bumpInput>
+                                                <Shadow />
+                                             </bumpInput>
+                                             <light>
+                                                <Light.Distant color="#beeaff" />
+                                             </light>
+                                          </Lighting>
+                                       </effect>
+                                       <font>
+                                          <Font name="Anime Inept" size="17.0" />
+                                       </font>
+                                    </Button>
+                                    <Button fx:id="button9" layoutX="195.0" layoutY="10.0" mnemonicParsing="false" onAction="#B9" text="9" textFill="#972525">
+                                       <effect>
+                                          <Lighting specularConstant="0.79" specularExponent="19.06">
+                                             <bumpInput>
+                                                <Shadow />
+                                             </bumpInput>
+                                             <light>
+                                                <Light.Distant color="#beeaff" />
+                                             </light>
+                                          </Lighting>
+                                       </effect>
+                                       <font>
+                                          <Font name="Anime Inept" size="17.0" />
+                                       </font>
+                                    </Button>
+                                 </children>
+                              </HBox>
+                              <HBox spacing="10.0">
+                                 <children>
+                                    <Button fx:id="button4" mnemonicParsing="false" onAction="#B4" text="4" textFill="#972525">
+                                       <effect>
+                                          <Lighting specularConstant="0.79" specularExponent="19.06">
+                                             <bumpInput>
+                                                <Shadow />
+                                             </bumpInput>
+                                             <light>
+                                                <Light.Distant color="#beeaff" />
+                                             </light>
+                                          </Lighting>
+                                       </effect>
+                                       <font>
+                                          <Font name="Anime Inept" size="17.0" />
+                                       </font>
+                                    </Button>
+                                    <Button fx:id="button5" mnemonicParsing="false" onAction="#B5" prefHeight="39.0" prefWidth="36.0" text="5" textFill="#972525">
+                                       <effect>
+                                          <Lighting specularConstant="0.79" specularExponent="19.06">
+                                             <bumpInput>
+                                                <Shadow />
+                                             </bumpInput>
+                                             <light>
+                                                <Light.Distant color="#beeaff" />
+                                             </light>
+                                          </Lighting>
+                                       </effect>
+                                       <font>
+                                          <Font name="Anime Inept" size="17.0" />
+                                       </font>
+                                    </Button>
+                                    <Button fx:id="button6" mnemonicParsing="false" onAction="#B6" text="6" textFill="#972525">
+                                       <effect>
+                                          <Lighting specularConstant="0.79" specularExponent="19.06">
+                                             <bumpInput>
+                                                <Shadow />
+                                             </bumpInput>
+                                             <light>
+                                                <Light.Distant color="#beeaff" />
+                                             </light>
+                                          </Lighting>
+                                       </effect>
+                                       <font>
+                                          <Font name="Anime Inept" size="17.0" />
+                                       </font>
+                                    </Button>
+                                 </children>
+                              </HBox>
+                              <HBox layoutX="10.0" layoutY="49.0" spacing="10.0">
+                                 <children>
+                                    <Button fx:id="button1" mnemonicParsing="false" onAction="#B1" prefHeight="39.0" prefWidth="32.0" text="1" textFill="#972525">
+                                       <effect>
+                                          <Lighting specularConstant="0.79" specularExponent="19.06">
+                                             <bumpInput>
+                                                <Shadow />
+                                             </bumpInput>
+                                             <light>
+                                                <Light.Distant color="#beeaff" />
+                                             </light>
+                                          </Lighting>
+                                       </effect>
+                                       <font>
+                                          <Font name="Anime Inept" size="17.0" />
+                                       </font>
+                                    </Button>
+                                    <Button fx:id="button2" mnemonicParsing="false" onAction="#B2" prefHeight="39.0" prefWidth="36.0" text="2" textFill="#972525">
+                                       <effect>
+                                          <Lighting specularConstant="0.79" specularExponent="19.06">
+                                             <bumpInput>
+                                                <Shadow />
+                                             </bumpInput>
+                                             <light>
+                                                <Light.Distant color="#beeaff" />
+                                             </light>
+                                          </Lighting>
+                                       </effect>
+                                       <font>
+                                          <Font name="Anime Inept" size="17.0" />
+                                       </font>
+                                    </Button>
+                                    <Button fx:id="button3" mnemonicParsing="false" onAction="#B3" prefHeight="39.0" prefWidth="31.0" text="3" textFill="#972525">
+                                       <effect>
+                                          <Lighting specularConstant="0.79" specularExponent="19.06">
+                                             <bumpInput>
+                                                <Shadow />
+                                             </bumpInput>
+                                             <light>
+                                                <Light.Distant color="#beeaff" />
+                                             </light>
+                                          </Lighting>
+                                       </effect>
+                                       <font>
+                                          <Font name="Anime Inept" size="17.0" />
+                                       </font>
+                                    </Button>
+                                 </children>
+                              </HBox>
+                              <HBox alignment="CENTER_RIGHT" layoutX="10.0" layoutY="98.0" spacing="10.0">
+                                 <children>
+                                    <Button fx:id="button0" mnemonicParsing="false" onAction="#B0" prefHeight="39.0" prefWidth="36.0" text="0" textFill="#972525">
+                                       <effect>
+                                          <Lighting specularConstant="0.79" specularExponent="19.06">
+                                             <bumpInput>
+                                                <Shadow />
+                                             </bumpInput>
+                                             <light>
+                                                <Light.Distant color="#beeaff" />
+                                             </light>
+                                          </Lighting>
+                                       </effect>
+                                       <font>
+                                          <Font name="Anime Inept" size="17.0" />
+                                       </font>
+                                    </Button>
+                                    <Button fx:id="Bd" layoutX="52.0" layoutY="10.0" mnemonicParsing="false" onAction="#Bd" prefHeight="39.0" prefWidth="34.0" text="◀" textFill="#972525">
+                                       <effect>
+                                          <Lighting specularConstant="0.79" specularExponent="19.06">
+                                             <bumpInput>
+                                                <Shadow />
+                                             </bumpInput>
+                                             <light>
+                                                <Light.Distant color="#beeaff" />
+                                             </light>
+                                          </Lighting>
+                                       </effect>
+                                       <font>
+                                          <Font name="Anime Inept" size="17.0" />
+                                       </font>
+                                    </Button>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                        <Region prefHeight="127.0" prefWidth="14.0" />
+                        <VBox alignment="CENTER" spacing="22.0">
+                           <children>
+                              <TextField fx:id="afficheurtext" alignment="CENTER" editable="false" prefHeight="40.0" prefWidth="159.0" promptText="your funds">
+                                 <font>
+                                    <Font name="Book Antiqua" size="16.0" />
+                                 </font>
+                                 <effect>
+                                    <Reflection fraction="0.66" topOpacity="0.35">
+                                       <input>
+                                          <Lighting diffuseConstant="1.21" specularConstant="0.0" specularExponent="8.84" surfaceScale="0.0">
+                                             <bumpInput>
+                                                <Shadow />
+                                             </bumpInput>
+                                             <light>
+                                                <Light.Distant azimuth="32.44" color="#f2cb96" elevation="107.79" />
+                                             </light>
+                                          </Lighting>
+                                       </input>
+                                    </Reflection>
+                                 </effect>
+                              </TextField>
+                              <Button fx:id="buttonDepose" mnemonicParsing="false" onAction="#deposer" text="Déposer" textFill="#972525">
+                                 <font>
+                                    <Font name="Century Gothic" size="17.0" />
+                                 </font>
+                                 <effect>
+                                    <InnerShadow />
+                                 </effect>
+                              </Button>
+                           </children>
+                        </VBox>
+                     </children>
+                     <VBox.margin>
+                        <Insets left="10.0" right="10.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox alignment="CENTER">
+                     <children>
+                        <Button mnemonicParsing="false" onAction="#goToMenu" prefHeight="27.0" prefWidth="319.0" text="◀ Retour">
+                           <effect>
+                              <DropShadow color="#fccfcf" />
+                           </effect>
+                           <font>
+                              <Font name="Delicious-Bold" size="14.0" />
+                           </font>
+                        </Button>
+                     </children>
+                     <effect>
+                        <Lighting diffuseConstant="2.0" specularConstant="0.0">
+                           <bumpInput>
+                              <Shadow />
+                           </bumpInput>
+                           <light>
+                              <Light.Distant color="#bc7070" />
+                           </light>
+                        </Lighting>
+                     </effect>
+                  </HBox>
+               </children>
+            </VBox>
+         </children></AnchorPane>
+      <Pane fx:id="down" onMouseDragged="#resizeDownDragged" onMousePressed="#resizeDownPressed" opacity="0.8" prefHeight="10.0" prefWidth="600.0" style="-fx-background-color: black;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+         <cursor>
+            <Cursor fx:constant="V_RESIZE" />
+         </cursor></Pane>
+      <Pane fx:id="up" onMouseDragged="#resizeUpDragged" onMousePressed="#resizeUpPressed" prefHeight="5.0" prefWidth="200.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <cursor>
+            <Cursor fx:constant="V_RESIZE" />
+         </cursor>
+      </Pane>
+      <Pane fx:id="left" onMouseDragged="#resizeLeftDragged" onMousePressed="#resizeLeftPressed" opacity="0.8" prefHeight="433.0" prefWidth="10.0" style="-fx-background-color: black;" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="40.0">
+         <cursor>
+            <Cursor fx:constant="H_RESIZE" />
+         </cursor></Pane>
+      <Pane fx:id="right" onMouseDragged="#resizeRightDragged" onMousePressed="#resizeRightPressed" opacity="0.8" prefHeight="200.0" prefWidth="10.0" style="-fx-background-color: black;" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="40.0">
+         <cursor>
+            <Cursor fx:constant="H_RESIZE" />
+         </cursor></Pane>
+   </children>
+</AnchorPane>

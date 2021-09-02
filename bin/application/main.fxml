@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.shape.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: TRANSPARENT;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MainController">
+   <children>
+      <AnchorPane fx:id="frame" onMouseDragged="#moveDragged" onMousePressed="#movePressed" opacity="0.8" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: black;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Button fx:id="closeButton" layoutX="562.0" layoutY="8.0" mnemonicParsing="false" onAction="#closeAction" text="X" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="8.0" />
+            <Button fx:id="minimizeButton" layoutX="494.0" layoutY="8.0" mnemonicParsing="false" onAction="#minimizeAction" prefHeight="25.0" prefWidth="26.0" text="-" AnchorPane.rightAnchor="80.0" AnchorPane.topAnchor="8.0" />
+            <Button fx:id="maximizeButton" layoutX="528.0" layoutY="8.0" mnemonicParsing="false" onAction="#maximizeAction" text="O" AnchorPane.rightAnchor="46.0" AnchorPane.topAnchor="8.0" />
+         </children>
+      </AnchorPane>
+      <AnchorPane opacity="0.8" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: black;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="40.0" />
+      <Pane fx:id="down" onMouseDragged="#resizeDownDragged" onMousePressed="#resizeDownPressed" prefHeight="3.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+         <cursor>
+            <Cursor fx:constant="V_RESIZE" />
+         </cursor></Pane>
+      <Pane fx:id="up" onMouseDragged="#resizeUpDragged" onMousePressed="#resizeUpPressed" prefHeight="3.0" prefWidth="200.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <cursor>
+            <Cursor fx:constant="V_RESIZE" />
+         </cursor></Pane>
+      <Pane fx:id="left" onMouseDragged="#resizeLeftDragged" onMousePressed="#resizeLeftPressed" prefHeight="200.0" prefWidth="3.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <cursor>
+            <Cursor fx:constant="H_RESIZE" />
+         </cursor></Pane>
+      <Pane fx:id="right" onMouseDragged="#resizeRightDragged" onMousePressed="#resizeRightPressed" prefHeight="200.0" prefWidth="3.0" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <cursor>
+            <Cursor fx:constant="H_RESIZE" />
+         </cursor></Pane>
+   </children>
+</AnchorPane>

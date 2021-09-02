@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.web.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.canvas.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.shape.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: TRANSPARENT;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controllers.PassController">
+   <children>
+      <AnchorPane fx:id="frame" onMouseDragged="#moveDragged" onMousePressed="#movePressed" opacity="0.8" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: black;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Button fx:id="closeButton" layoutX="562.0" layoutY="8.0" mnemonicParsing="false" onAction="#closeAction" text="X" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="8.0" />
+            <Button fx:id="minimizeButton" layoutX="494.0" layoutY="8.0" mnemonicParsing="false" onAction="#minimizeAction" prefHeight="25.0" prefWidth="26.0" text="-" AnchorPane.rightAnchor="80.0" AnchorPane.topAnchor="8.0" />
+            <Button fx:id="maximizeButton" layoutX="528.0" layoutY="8.0" mnemonicParsing="false" onAction="#maximizeAction" text="O" AnchorPane.rightAnchor="46.0" AnchorPane.topAnchor="8.0" />
+            <Circle fx:id="signe1" fill="#ff1f1f" layoutX="28.0" layoutY="21.0" radius="8.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="3.0" />
+            <Circle fx:id="signe2" fill="#ff1f1f" layoutX="51.0" layoutY="21.0" radius="8.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="3.0" />
+            <Circle fx:id="signe3" fill="#ff1f1f" layoutX="74.0" layoutY="21.0" radius="8.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="3.0" />
+         </children>
+      </AnchorPane>
+      <AnchorPane opacity="0.92" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: black;" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="40.0">
+         <children>
+            <VBox alignment="CENTER" prefHeight="360.0" prefWidth="600.0" spacing="20.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../images/logo.png" />
+                     </image>
+                  </ImageView>
+                  <HBox alignment="CENTER">
+                     <children>
+                        <Label text="Numero de compte">
+                           <font>
+                              <Font name="Delicious-SmallCaps" size="14.0" />
+                           </font>
+                        </Label>
+                        <Region prefWidth="68.0" />
+                        <TextField fx:id="inputNumC" onAction="#onEnter" promptText="1524" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER">
+                     <children>
+                        <Label prefHeight="17.0" prefWidth="105.0" text="Mot de passe">
+                           <font>
+                              <Font name="Delicious-SmallCaps" size="15.0" />
+                           </font>
+                        </Label>
+                        <Region prefWidth="68.0" />
+                        <TextField fx:id="inputPassword" onAction="#onEnter" promptText="2564" />
+                     </children>
+                  </HBox>
+                  <ProgressIndicator fx:id="loader" progress="0.0" visible="false" />
+               </children>
+            </VBox>
+         </children></AnchorPane>
+      <Pane fx:id="down" onMouseDragged="#resizeDownDragged" onMousePressed="#resizeDownPressed" opacity="0.8" prefHeight="10.0" prefWidth="600.0" style="-fx-background-color: black;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+         <cursor>
+            <Cursor fx:constant="V_RESIZE" />
+         </cursor></Pane>
+      <Pane fx:id="up" onMouseDragged="#resizeUpDragged" onMousePressed="#resizeUpPressed" prefHeight="5.0" prefWidth="200.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <cursor>
+            <Cursor fx:constant="V_RESIZE" />
+         </cursor></Pane>
+      <Pane fx:id="left" onMouseDragged="#resizeLeftDragged" onMousePressed="#resizeLeftPressed" opacity="0.8" prefHeight="200.0" prefWidth="10.0" style="-fx-background-color: black;" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="40.0">
+         <cursor>
+            <Cursor fx:constant="H_RESIZE" />
+         </cursor></Pane>
+      <Pane fx:id="right" onMouseDragged="#resizeRightDragged" onMousePressed="#resizeRightPressed" opacity="0.8" prefHeight="200.0" prefWidth="10.0" style="-fx-background-color: black;" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="40.0">
+         <cursor>
+            <Cursor fx:constant="H_RESIZE" />
+         </cursor></Pane>
+   </children>
+</AnchorPane>

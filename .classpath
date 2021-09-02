@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="images"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
+	<classpathentry kind="lib" path="C:/Users/mido/Desktop/Master S3/3-Métier de chercheur et CS/outil/JADE-bin-4.4.0/ojdbc6.jar"/>
+	<classpathentry kind="lib" path="C:/Users/mido/Desktop/Master S3/3-Métier de chercheur et CS/outil/JADE-bin-4.4.0/jade.jar"/>
+	<classpathentry kind="con" path="org.eclipse.fx.ide.jdt.core.JAVAFX_CONTAINER"/>
+	<classpathentry kind="lib" path="C:/Users/mido/Desktop/Master S3/3-Métier de chercheur et CS/outil/JADE-bin-4.4.0/TrayNotification.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
